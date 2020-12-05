@@ -1,0 +1,57 @@
+{% extends 'login.html' %}
+{% extends 'login.html' %}
+{% load static %}
+{% static 'img' as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+{% block content  %}
+
+    <form action="register" method="post">
+      {% csrf_token %}
+      <label>Fist NAME </label>
+      <input type="text" name="first_name" placeholder="First Name"><br>
+      <label> LAST NAME </label>
+      <input type="text" name="last_name" placeholder="Last Name"><br>
+      <label> USER NAME </label>
+      <input type="text" name="username" placeholder="Username"><br>
+      <label> E-MAIL </label>
+      <input type="email" name="email"  placeholder="E mail"><br>
+      <label>PASSWORD</label>
+      <input type="password" name="password1" placeholder="Password"><br>
+      <label>CONFIRM-PASSWORD</label>
+      <input type="password" name="password2" placeholder="Confirm Password"><br>
+      <input type="SUBMIT">
+    </form>
+    
+
+    {% endblock %}
+
+
+    {% block test %}
+
+       <form action="login" method="post">
+          <div class="col-md-6">
+          {% csrf_token %}
+            <label>USER NAME </label>
+            <input type="text" name="username" placeholder="Username"><br>
+            <lanel>PASSWORD</label>
+            <input type="password" name="password" placeholder="Confirm Password"><br>
+            <input type="SUBMIT">
+          </div>
+        
+        </form>
+
+    {% endblock %}
+    
+
+    
+     
+</body>
+<html>
+
+
+
+
